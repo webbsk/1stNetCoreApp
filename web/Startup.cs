@@ -27,7 +27,9 @@ namespace web
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+				var name = Environment.UserName;
+				var message = logic.HelloWorld.GetMessage(name);
+                await context.Response.WriteAsync(message);
             });
         }
     }
