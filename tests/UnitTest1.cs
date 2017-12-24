@@ -1,5 +1,6 @@
 using System;
 using Xunit;
+using logic;
 
 namespace tests
 {
@@ -8,7 +9,9 @@ namespace tests
         [Fact]
         public void Test1()
         {
-
+			var expectedMessage = "Hello Sam!";
+			var actualMessage = HelloWorld.GetMessage("Sam");
+			Assert.Equal(expectedMessage, actualMessage);
         }
     }
 }
